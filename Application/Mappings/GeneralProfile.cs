@@ -1,0 +1,18 @@
+﻿using AutoMapper;
+using InventoryApp.Api.Application.Dtos.TiposDocumentos;
+using InventoryApp.Api.Application.Dtos.Usuarios;
+using InventoryApp.Api.Infraestructure.Contexts;
+
+namespace InventoryApp.Api.Application.Mappings
+{
+    public class GeneralProfile : Profile
+    {
+        public GeneralProfile()
+        {
+            CreateMap<CreateTiposDocumentoDto, Tiposdocumento>().ReverseMap();
+            CreateMap<Tiposdocumento, TiposDocumentoDto>().ReverseMap();
+
+            CreateMap<Usuario, UsuarioDto>().ReverseMap();
+        }
+    }
+}
