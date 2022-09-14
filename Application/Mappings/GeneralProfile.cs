@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using InventoryApp.Api.Application.Dtos.Menus;
 using InventoryApp.Api.Application.Dtos.TiposDocumentos;
 using InventoryApp.Api.Application.Dtos.Usuarios;
 using InventoryApp.Api.Infraestructure.Contexts;
@@ -13,6 +14,7 @@ namespace InventoryApp.Api.Application.Mappings
             CreateMap<Tiposdocumento, TiposDocumentoDto>().ReverseMap();
 
             CreateMap<Usuario, UsuarioDto>().ReverseMap();
+            CreateMap<Menu, MenuDto>().ReverseMap();
         }
     }
 }

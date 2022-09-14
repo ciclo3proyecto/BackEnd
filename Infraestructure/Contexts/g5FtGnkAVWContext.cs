@@ -73,9 +73,13 @@ namespace InventoryApp.Api.Infraestructure.Contexts
                     .HasMaxLength(13)
                     .HasColumnName("estado");
 
-                entity.Property(e => e.Menu1)
+                entity.Property(e => e.Opcion)
                     .HasMaxLength(100)
-                    .HasColumnName("menu");
+                    .HasColumnName("Opcion");
+
+                entity.Property(e => e.PadreId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("PadreId");
 
                 entity.Property(e => e.Ruta)
                     .HasMaxLength(500)
