@@ -23,11 +23,11 @@ namespace InventoryApp.Api.Infraestructure.Contexts
         public string? Segundoapellido { get; set; }
         public string? Estado { get; set; }
         public int? Creadopor { get; set; }
-        public DateOnly? Creado { get; set; }
+        public DateTime? Creado { get; set; }
         public int? Actualizadopor { get; set; }
-        public DateOnly? Actualizado { get; set; }
+        public DateTime? Actualizado { get; set; }
         public int? Eliminadopor { get; set; }
-        public DateOnly? Eliminado { get; set; }
+        public DateTime? Eliminado { get; set; }
 
         public virtual Perfile Perfiles { get; set; } = null!;
         public virtual Tiposdocumento Tiposdocumentos { get; set; } = null!;

@@ -31,7 +31,7 @@ namespace InventoryApp.Api.Application.Features.TiposDocumentos.Commands
                     var data = this.mapper.Map<Tiposdocumento>(command.CreateTiposDocumentoDto);
 
                     data.Creadopor = 1;
-                    data.Creado = DateOnly.FromDateTime(DateTime.Now);
+                    data.Creado = DateTime.Now;
                     data.Estado = "Activo";
 
                     context.Tiposdocumentos.Add(data);

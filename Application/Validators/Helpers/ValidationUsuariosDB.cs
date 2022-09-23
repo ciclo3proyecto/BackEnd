@@ -30,5 +30,38 @@ namespace InventoryApp.Api.Application.Validators.Helpers
             }
             return false;
         }
+
+        public bool ExistIdentificacion(decimal identificacion, int id = 0)
+        {
+
+            var exist = context.Usuarios
+                                .Where(x => x.Id != id
+                                         && x.Identificacion == identificacion
+                                         && x.Estado == EstadosConstants.Activo
+                                      )
+                                .FirstOrDefault();
+            if (exist != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool ExistLogin(string login,int id = 0)
+        {
+
+            var exist = context.Usuarios
+                                .Where(x => x.Id != id
+                                         && x.Login.Trim().ToLower() == login.Trim().ToLower()
+                                         && x.Estado == EstadosConstants.Activo
+                                      )
+                                .FirstOrDefault();
+            if (exist != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

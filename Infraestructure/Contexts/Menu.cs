@@ -15,6 +15,7 @@ namespace InventoryApp.Api.Infraestructure.Contexts
         public string Descripcion { get; set; }
         public int PadreId { get; set; }
         public string Ruta { get; set; }
+        public string RutaImagen { get; set; }
         public string Estado { get; set; }
         public int Creadopor { get; set; }
         public DateTime Creado { get; set; }

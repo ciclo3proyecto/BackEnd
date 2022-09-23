@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using InventoryApp.Api;
 using InventoryApp.Api.Infraestructure.Contexts;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,16 @@ builder.Services.AddControllers()
 
 
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyCors", builder =>
+    {
+        builder.SetIsOriginAllowed(o => new Uri(o).Host == "http://127.0.0.1:3000")
+        .AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+    });
+
+});
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -51,6 +62,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("MyCors");
 
 app.MapControllers();
 

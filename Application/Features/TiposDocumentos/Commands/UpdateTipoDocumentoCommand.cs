@@ -27,7 +27,7 @@ namespace InventoryApp.Api.Application.Features.TiposDocumentos.Commands
 
                     register.Descripcion = command.UpdateTiposDocumentoDto.Descripcion;
                     register.Actualizadopor = command.UpdateTiposDocumentoDto.ActualizaPor;
-                    register.Actualizado = DateOnly.FromDateTime(DateTime.Now);
+                    register.Actualizado = DateTime.Now;
 
                     context.Tiposdocumentos.Update(register);
                     await context.SaveChangesAsync(cancellationToken);

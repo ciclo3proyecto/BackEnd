@@ -26,7 +26,7 @@ namespace InventoryApp.Api.Application.Features.TiposDocumentos.Commands
                 {
                     var register = context.Tiposdocumentos.Find(command.DeleteTiposDocumentoDto.Id);
                     register.Estado = EstadosConstants.Inactivo;
-                    register.Eliminado = DateOnly.FromDateTime(DateTime.Now);
+                    register.Eliminado = DateTime.Now;
                     register.Eliminadopor = command.DeleteTiposDocumentoDto.Eliminadopor;
 
                     context.Tiposdocumentos.Update(register);

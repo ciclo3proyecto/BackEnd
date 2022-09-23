@@ -13,6 +13,7 @@ namespace InventoryApp.Api.Application.Mappings
             CreateMap<CreateTiposDocumentoDto, Tiposdocumento>().ReverseMap();
             CreateMap<Tiposdocumento, TiposDocumentoDto>().ReverseMap();
 
+            CreateMap<CreateUsuarioDto, Usuario>().ReverseMap();
             CreateMap<Usuario, UsuarioDto>().ReverseMap();
             CreateMap<Menu, MenuDto>().ReverseMap();
         }

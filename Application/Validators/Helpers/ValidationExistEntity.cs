@@ -23,5 +23,25 @@ namespace InventoryApp.Api.Application.Validators.Helpers
             return false;
         }
 
+        public bool ExistPerfil(int id)
+        {
+            var exist = context.Perfiles
+                               .FirstOrDefault(x => x.Id == id
+                                                 && x.Estado == EstadosConstants.Activo);
+            if (exist != null)
+                return true;
+            return false;
+        }
+
+        public bool ExistUsuario(int id)
+        {
+            var exist = context.Usuarios
+                               .FirstOrDefault(x => x.Id == id
+                                                 && x.Estado == EstadosConstants.Activo);
+            if (exist != null)
+                return true;
+            return false;
+        }
+
     }
 }
