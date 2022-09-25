@@ -103,7 +103,7 @@ namespace InventoryApp.Api.Controllers
                 throw new AppException(response.Error, (response.Code is not null) ? (int)response.Code : (int)HttpStatusCode.InternalServerError);
             }
 
-            var result = mapper.Map<UsuarioDto>(response.Data);
+            var result = response.Data;
 
             return Ok(result);
 

@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public int PerfilesId { get; set; }
+        public string NombrePerfil { get; set; }
         public string Login { get; set; }
         public string Nombres { get; set; }
         public string Primerapellido { get; set; }
