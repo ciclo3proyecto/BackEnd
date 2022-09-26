@@ -52,7 +52,7 @@ namespace InventoryApp.Api.Controllers
 
             var data = await mediator.Send(query);
 
-            return Ok(mapper.Map<List<UsuarioDto>>(data));
+            return Ok(data);
         }
 
 
