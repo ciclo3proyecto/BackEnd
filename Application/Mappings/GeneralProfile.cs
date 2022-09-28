@@ -16,6 +16,8 @@ namespace InventoryApp.Api.Application.Mappings
 
             CreateMap<CreateUsuarioDto, Usuario>().ReverseMap();
             CreateMap<Usuario, UsuarioDto>().ReverseMap();
+            CreateMap<Usuario, UsuarioQueryDto>().ReverseMap();
+            
             CreateMap<Menu, MenuDto>().ReverseMap();
 
             CreateMap<Perfile, PerfileDto>().ReverseMap();

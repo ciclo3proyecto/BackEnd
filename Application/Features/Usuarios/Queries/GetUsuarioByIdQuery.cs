@@ -1,5 +1,6 @@
 ﻿using InventoryApp.Api.Infraestructure.Constanst;
 using InventoryApp.Api.Infraestructure.Contexts;
+using InventoryApp.Api.Infraestructure.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,11 @@ namespace InventoryApp.Api.Application.Features.Usuarios.Queries
                                         .Where(x => x.Id == request.Id
                                                  && x.Estado == EstadosConstants.Activo)
                                         .ToListAsync(cancellationToken);
+
+                if (data!=null)
+                {
+                    data[0].Password = UtilStrings.DesEncriptar(data[0].Password);
+                }
 
                 return data;
             }

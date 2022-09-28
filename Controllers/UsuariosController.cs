@@ -58,17 +58,17 @@ namespace InventoryApp.Api.Controllers
 
 
         [HttpGet("{Id}")]
-        [ProducesResponseType(typeof(List<Usuario>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<UsuarioQueryDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ExceptionResult), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ExceptionResult), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<List<Usuario>>> GetUsuario(int Id)
+        public async Task<ActionResult<List<UsuarioQueryDto>>> GetUsuario(int Id)
         {
             GetUsuarioByIdQuery.Query query = new(Id);
 
             var data = await mediator.Send(query);
 
-            return Ok(data);
+            return Ok(mapper.Map<List<UsuarioQueryDto>>(data));
         }
 
         [HttpPost]
