@@ -50,7 +50,7 @@ namespace InventoryApp.Api.Application.Validators.Usuarios
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage(ValidationErrorMessage.Obligatorio)
                 .NotEmpty().WithMessage(ValidationErrorMessage.Obligatorio)
-                .MinimumLength(6).WithMessage(ValidationErrorMessage.Min6)
+                .MinimumLength(2).WithMessage(ValidationErrorMessage.Min4)
                 .MaximumLength(40).WithMessage(ValidationErrorMessage.Max40)
                 .Must(c => { return !validationUsuariosDB.ExistLogin(c); })
                 .WithMessage(ValidationErrorMessage.SiExiste);

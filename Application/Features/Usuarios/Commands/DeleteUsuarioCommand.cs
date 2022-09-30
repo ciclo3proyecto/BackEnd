@@ -1,5 +1,4 @@
-﻿using InventoryApp.Api.Application.Dtos.TiposDocumentos;
-using InventoryApp.Api.Application.Dtos.Usuarios;
+﻿using InventoryApp.Api.Application.Dtos.Usuarios;
 using InventoryApp.Api.Infraestructure.Constanst;
 using InventoryApp.Api.Infraestructure.Contexts;
 using InventoryApp.Api.Infraestructure.Result;

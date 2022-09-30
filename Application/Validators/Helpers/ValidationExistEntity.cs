@@ -43,5 +43,25 @@ namespace InventoryApp.Api.Application.Validators.Helpers
             return false;
         }
 
+        public bool ExistProducto(int id)
+        {
+            var exist = context.Productos
+                               .FirstOrDefault(x => x.Id == id
+                                                 && x.Estado == EstadosConstants.Activo);
+            if (exist != null)
+                return true;
+            return false;
+        }
+
+        public bool ExistUnidad(int id)
+        {
+            var exist = context.Unidades
+                               .FirstOrDefault(x => x.Id == id
+                                                 && x.Estado == EstadosConstants.Activo);
+            if (exist != null)
+                return true;
+            return false;
+        }
+
     }
 }

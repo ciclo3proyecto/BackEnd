@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using InventoryApp.Api.Application.Dtos.Usuarios;
+using InventoryApp.Api.Infraestructure.Constanst;
 using InventoryApp.Api.Infraestructure.Contexts;
 using InventoryApp.Api.Infraestructure.Result;
 using InventoryApp.Api.Infraestructure.Utils;
@@ -31,9 +32,8 @@ namespace InventoryApp.Api.Application.Features.Usuarios.Commands
 
                     var data = this.mapper.Map<Usuario>(command.CreateUsuarioDto);
                     data.Password = UtilStrings.Encriptar(data.Password);
-                    data.Creadopor = 1;
                     data.Creado = DateTime.Now;
-                    data.Estado = "Activo";
+                    data.Estado = EstadosConstants.Activo;
 
                     context.Usuarios.Add(data);
                     await context.SaveChangesAsync(cancellationToken);

@@ -61,7 +61,7 @@ namespace InventoryApp.Api.Application.Validators.Usuarios
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage(ValidationErrorMessage.Obligatorio)
                 .NotEmpty().WithMessage(ValidationErrorMessage.Obligatorio)
-                .MinimumLength(6).WithMessage(ValidationErrorMessage.Min6)
+                .MinimumLength(6).WithMessage(ValidationErrorMessage.Min4)
                 .MaximumLength(40).WithMessage(ValidationErrorMessage.Max40)
                 .Must((c,id) => { return !validationUsuariosDB.ExistLogin(c.Login, c.Id); })
                 .WithMessage(ValidationErrorMessage.SiExiste);
@@ -100,7 +100,7 @@ namespace InventoryApp.Api.Application.Validators.Usuarios
                .MaximumLength(100).WithMessage(ValidationErrorMessage.Max100);
             #endregion
 
-            #region CreadoPor
+            #region Actualizapor
             RuleFor(x => x.Actualizapor)
                .Cascade(CascadeMode.Stop)
                .NotNull().WithMessage(ValidationErrorMessage.Obligatorio)
